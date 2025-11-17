@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Forecast.css";
 import WeatherForecastDay from "./WeatherForecastDay.jsx";
 import axios from "axios";
 
-export default function Forecast() {
+export default function Forecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
 
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.city]);
+
   function handleResponse(response) {
-    console.log(response.data);
     setForecast(response.data.daily);
     setLoaded(true);
   }
@@ -31,7 +34,7 @@ export default function Forecast() {
     );
   } else {
     const apiKey = "3oa2b4640a831a6act8f0d75a77730e5";
-    let city = "Gresham";
+    let city = props.city;
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 

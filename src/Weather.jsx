@@ -28,6 +28,7 @@ export default function Weather(props) {
 
   function handleCityChange(event) {
     setCity(event.target.value);
+    console.log(city);
   }
 
   function search() {
@@ -51,7 +52,7 @@ export default function Weather(props) {
         <hr />
         <WeatherInfo data={weatherData} />
         <hr />
-        <Forecast />
+        <Forecast city={city} />
       </div>
     );
   } else {
