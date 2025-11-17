@@ -11,7 +11,6 @@ function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="Gresham" />
-        <Forecast />
         <Footer />
       </div>
     </div>
