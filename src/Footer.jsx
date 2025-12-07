@@ -6,12 +6,12 @@ export default function Footer() {
     <div className="footer">
       <footer>
         This project is coded by
-        <a href="https://github.com/mkmelhundley-code" target="_blank">
+        <a href="https://github.com/mjhdesignstudio" target="_blank">
           Melissa Hundley
         </a>
         , is open-sourced on
         <a
-          href="https://github.com/mkmelhundley-code/my-react-weather-app"
+          href="https://github.com/mjhdesignstudio/my-react-weather-app"
           target="_blank"
         >
           GitHub
